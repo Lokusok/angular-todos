@@ -1,0 +1,12 @@
+<ul>
+  @for (todo of list; track todo._id) {
+  <li>
+    <app-todo
+      [onToggle]="onToggle"
+      [onEdit]="onEdit"
+      [onDelete]="onDelete"
+      [todo]="todo"
+    ></app-todo>
+  </li>
+  }
+</ul>

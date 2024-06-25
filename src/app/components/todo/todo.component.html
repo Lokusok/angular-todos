@@ -1,0 +1,26 @@
+<article>
+  <label>
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="onToggle(todo._id)"
+    />
+    <span>{{ todo.title }}</span>
+  </label>
+
+  @if (!isEditing) {
+  <button (click)="startEdit()" class="btn">Edit title</button>
+  <button (click)="delete()" class="btn">Delete</button>
+  } @else {
+  <input
+    class="input"
+    [(ngModel)]="newTitle"
+    type="text"
+    placeholder="new title"
+  />
+  <button [disabled]="newTitle.length === 0" (click)="saveEdit()" class="btn">
+    Save
+  </button>
+  <button (click)="stopEdit()" class="btn">Cancel</button>
+  }
+</article>

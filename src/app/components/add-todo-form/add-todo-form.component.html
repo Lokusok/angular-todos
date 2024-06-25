@@ -1,0 +1,31 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form__row">
+    <label>
+      <span>Title:</span>
+      <input
+        class="input"
+        type="text"
+        placeholder="Title of todo"
+        formControlName="title"
+      />
+    </label>
+  </div>
+
+  <div class="form__row">
+    <label>
+      <span>Deadline:</span>
+      <input class="input" type="date" formControlName="deadline" />
+    </label>
+  </div>
+
+  <div class="form__row">
+    <label>
+      <span>Is completed:</span>
+      <input class="input" type="checkbox" formControlName="isCompleted" />
+    </label>
+  </div>
+
+  <div class="form__row">
+    <button [disabled]="form.invalid" class="form__btn">Create new</button>
+  </div>
+</form>
